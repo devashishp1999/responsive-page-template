@@ -1,0 +1,243 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  max-width: 100%;
+  height: 100vh;
+  /* background-color: black; */
+}
+/* ///////////////////////////////////////////////////////////////////////// */
+.header {
+  width: 100%;
+  height: calc(18vh - 20px);
+  background-color: rgb(108, 107, 218);
+  display: flex;
+  align-items: center;
+  padding-left: 15px;
+  padding-right: 15px;
+  justify-content: space-between;
+  margin-bottom: 5px;
+}
+.name {
+  max-width: 40%;
+  padding-left: 5px;
+  color: white;
+  border-left: 1px solid white;
+  line-height: 22px;
+}
+
+.head-right {
+  min-width: 60%;
+  height: 30%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.top-nav {
+  display: none;
+}
+
+.search {
+  height: 100%;
+  aspect-ratio: 1/1;
+  border-radius: 5px;
+  background-color: white;
+  margin-right: 15px;
+  border: none;
+  /* transition: width ease-in-out 1s; */
+}
+.expand-search {
+  width: 80%;
+  height: 100%;
+  border-radius: 8px;
+  background-color: white;
+  margin-right: 15px;
+  border: none;
+  /* transition: width ease-in-out 1s; */
+}
+.lines-3 {
+  min-width: 27px;
+  height: 3px;
+  border-radius: 10px;
+  background-color: white;
+}
+.lines-3::before,
+.lines-3::after {
+  content: '';
+  display: block;
+  height: 3px;
+  border-radius: 10px;
+  background-color: white;
+  position: relative;
+}
+.lines-3::before {
+  top: -8px;
+}
+.lines-3::after {
+  background-color: white;
+  bottom: -5px;
+}
+
+/* ////////////////////////////////////////////////////////////////////////////// */
+.nav-bar {
+  width: 100%;
+  height: 100%;
+  background-color: rgb(109, 19, 109);
+  position: absolute;
+  top: 0;
+  right: 200%;
+  /* box-shadow: 0 0 20px rgba(0, 0, 0, 0.74); */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  /* padding-right: 20%; */
+}
+
+.cross {
+  width: 40px;
+  height: 5px;
+  margin: 50px 0 0 0;
+  border-radius: 10px;
+  transform: rotate(45deg);
+  background-color: whitesmoke;
+  position: absolute;
+  right: 20px;
+  /* box-shadow: 0 0 10px; */
+}
+.cross::after {
+  content: '';
+  width: 40px;
+  height: 5px;
+  background-color: whitesmoke;
+  display: block;
+  transform: rotate(90deg);
+  /* box-shadow: 0 0 5px; */
+}
+.nav {
+  width: 100%;
+  height: 90%;
+  position: absolute;
+  top: 10%;
+  left: 0;
+  display: flex;
+  place-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding-bottom: 20%;
+}
+.navc {
+  width: 50%;
+  font-weight: 1000;
+  font-size: 1.5em;
+  padding: 7px;
+  margin: 0 0 15px 0;
+  border-radius: 7px;
+  color: whitesmoke;
+}
+.nav-foot {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 10%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  font-weight: 500;
+  color: whitesmoke;
+}
+/* /////////////////////////////////////////////////////////////////////// */
+
+.main {
+  width: 100%;
+  height: calc(100% - 18vh + 20px);
+  background-color: coral;
+  margin-bottom: 5px;
+}
+
+.side-bar {
+  width: 100%;
+  height: 50%;
+  background-color: cornflowerblue;
+}
+
+.footer {
+  margin-top: 5px;
+  width: 100%;
+  height: 30%;
+  background-color: rgb(74, 102, 155);
+}
+/* ////////////////////////////////////////////////////////////// */
+
+.text {
+  text-align: center;
+  color: whitesmoke;
+  text-shadow: 0 0 2px rgba(0, 0, 0, 0.979);
+  font-size: 2rem;
+  padding-top: 10px;
+  font-weight: 1000;
+}
+
+/* For tablets */
+@media only screen and (min-width: 484px) {
+  .name {
+    font-size: 165%;
+  }
+
+  .lines-3,
+  .nav-bar {
+    display: none;
+  }
+
+  .top-nav {
+    display: contents;
+  }
+
+  .head-right {
+    min-width: 50%;
+    justify-content: flex-end;
+  }
+  .top-nav {
+    display: flex;
+    justify-content: space-evenly;
+    width: 60%;
+  }
+  .nav-tc {
+    margin-right: 5px;
+    color: white;
+  }
+}
+
+@media only screen and (min-width: 780px) {
+  .header {
+    width: 99%;
+    margin: 0 0.5% 10px 0.5%;
+  }
+  .main {
+    width: 70%;
+    display: inline-block;
+    position: relative;
+    left: 0.5%;
+  }
+  .side-bar {
+    width: 28%;
+    height: calc(100% - 18vh + 20px);
+    float: right;
+    margin-right: 0.5%;
+    /* display: inline-block; */
+  }
+  .name {
+    font-size: 220%;
+    line-height: 33px;
+  }
+  .nav-tc {
+    font-size: 150%;
+  }
+  .footer {
+    width: 99%;
+    margin: 5px 0.5% 0 0.5%;
+  }
+}
